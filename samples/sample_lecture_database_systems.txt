@@ -1,0 +1,17 @@
+Database Management Systems: Concurrency Control and ACID Properties
+
+1. TRANSACTIONS AND ACID PROPERTIES
+A database transaction is defined as a logical unit of work that contains one or more SQL operations executed on a database.
+Atomicity refers to the guarantee that either all operations within the work unit succeed or none are applied.
+Consistency is defined as the principle ensuring that a transaction brings the database from one valid state to another, maintaining all schema constraints.
+Isolation represents the requirement that concurrent execution of transactions leaves the database in the same state that would have been obtained if transactions were executed sequentially.
+Durability refers to the guarantee that once a transaction has committed, its changes remain recorded even in the event of a system crash.
+
+2. CONCURRENCY CONTROL PROBLEMS
+Dirty read refers to a situation where a transaction reads uncommitted data written by another concurrent transaction.
+Non-repeatable read occurs when a transaction reads the same row twice and obtains different values because another transaction modified and committed the row in between.
+Phantom read is defined as a condition where a transaction re-executes a range query and finds additional rows inserted by another committed transaction.
+
+3. TWO-PHASE LOCKING (2PL)
+Strict Two-Phase Locking represents a concurrency protocol ensuring serializability where exclusive locks are held until the transaction completes.
+Deadlock detection refers to the periodic search for cycles in the wait-for graph of waiting transactions.

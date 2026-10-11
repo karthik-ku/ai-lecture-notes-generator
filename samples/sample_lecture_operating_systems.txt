@@ -1,0 +1,22 @@
+Lecture 7: Operating Systems, Virtual Memory, and Paging Architecture
+
+1. INTRODUCTION TO VIRTUAL MEMORY
+Virtual memory is defined as a memory management capability of an operating system that uses hardware and software to allow a computer to compensate for physical memory shortages by temporarily transferring data from random access memory to disk storage.
+Virtual address space refers to the set of virtual addresses that an operating system allocates to a process.
+
+2. PAGING MECHANISMS
+Paging represents a memory management scheme by which a computer stores and retrieves data from secondary storage for use in main memory.
+In a paging scheme, the operating system divides memory into fixed-size blocks called page frames in physical memory and pages in logical memory.
+A Page Table is defined as the data structure used by a virtual memory system in a computer operating system to store the mapping between virtual addresses and physical addresses.
+Translation Lookaside Buffer (TLB) refers to a high-speed hardware cache used by the memory management unit to reduce the time taken to access a user memory location.
+
+3. PAGE FAULTS AND REPLACEMENT POLICIES
+A page fault is defined as an exception raised by computer hardware when a running program accesses a memory page that is not currently mapped in physical RAM.
+When a page fault occurs, the operating system must execute a page replacement algorithm to decide which page frame to evict.
+The Least Recently Used (LRU) algorithm represents a page replacement policy that evicts the page that has not been accessed for the longest period of time.
+Thrashing refers to a state in which the CPU spends significantly more time swapping pages into and out of memory than executing actual program instructions.
+
+4. EXAM REVIEW TAKEAWAYS
+- Virtual memory provides process isolation and memory protection.
+- The TLB hit ratio is critical for low effective memory access times (EMAT).
+- Working set models help operating systems prevent thrashing under high concurrency.
