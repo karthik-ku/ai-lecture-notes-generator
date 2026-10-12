@@ -13,10 +13,6 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
-# Non-root user for security
-RUN addgroup -S spring && adduser -S spring -G spring
-USER spring:spring
-
 COPY --from=builder /app/target/*.jar app.jar
 
 ENV PORT=8080
