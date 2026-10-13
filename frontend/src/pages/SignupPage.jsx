@@ -44,13 +44,15 @@ const SignupPage = () => {
       await register(fullName.trim(), email.trim(), password);
       navigate('/dashboard');
     } catch (err) {
-      if (err.response?.data?.error) {
-        setError(err.response.data.error);
-      } else if (err.response?.data?.details) {
+      if (err.response?.data?.details) {
         const details = Object.values(err.response.data.details).join(', ');
         setError(details);
+      } else if (err.response?.data?.error) {
+        setError(err.response.data.error);
+      } else if (err.response?.data?.message) {
+        setError(err.response.data.message);
       } else {
-        setError('Registration failed. Please check your credentials.');
+        setError(err.message || 'Registration failed. Please check your credentials.');
       }
     } finally {
       setLoading(false);

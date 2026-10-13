@@ -28,8 +28,10 @@ const LoginPage = () => {
     } catch (err) {
       if (err.response?.data?.error) {
         setError(err.response.data.error);
+      } else if (err.response?.data?.message) {
+        setError(err.response.data.message);
       } else {
-        setError('Invalid email or password.');
+        setError(err.message || 'Invalid email or password.');
       }
     } finally {
       setLoading(false);
