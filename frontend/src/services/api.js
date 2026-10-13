@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'https://ai-lectures.onrender.com/api';
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
 const cleanBaseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
 const finalBaseUrl = cleanBaseUrl.startsWith('http') && !cleanBaseUrl.endsWith('/api')
   ? `${cleanBaseUrl}/api`
